@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VibeCodingIndoorClimateApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9f2c3642e8ba88f9e8d2af3fc78193333a4703f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+057b501c3ea631ef6e9b8967c12bcf6f3a071bb0")]
 [assembly: System.Reflection.AssemblyProductAttribute("VibeCodingIndoorClimateApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VibeCodingIndoorClimateApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

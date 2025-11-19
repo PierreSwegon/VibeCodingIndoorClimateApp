@@ -13,16 +13,21 @@ import { formatTimestamp } from "../utils/dataService";
 
 interface CO2ChartProps {
   data: ClimateData[];
+  timeRange?: "24h" | "7d";
 }
 
-export function CO2Chart({ data }: CO2ChartProps) {
-  const chartData = data.map((item) => ({
-    time: formatTimestamp(item.timestamp, true),
+export function CO2Chart({ data, timeRange = "24h" }: CO2ChartProps) {
+  // Sample data for 7d view to avoid overcrowding
+  const sampledData =
+    timeRange === "7d" ? data.filter((_, index) => index % 6 === 0) : data;
+
+  const chartData = sampledData.map((item) => ({
+    time: formatTimestamp(item.timestamp, true, timeRange),
     co2: item.co2,
   }));
 
   return (
-    <ResponsiveContainer width="100%" height={200}>
+    <ResponsiveContainer width="100%" height={180}>
       <LineChart data={chartData}>
         <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
         <XAxis

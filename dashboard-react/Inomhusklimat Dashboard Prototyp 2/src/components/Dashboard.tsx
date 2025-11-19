@@ -79,7 +79,7 @@ export function Dashboard() {
 
   // Annars visa landningssidan
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen p-4" style={{ backgroundColor: '#F5F5F5' }}>
       <div className="max-w-md mx-auto h-screen flex flex-col">
         {/* Header */}
         <div className="text-center py-4 relative">
@@ -99,7 +99,7 @@ export function Dashboard() {
         </div>
 
         {/* Metrics Grid - Compact for mobile */}
-        <div className="grid grid-cols-2 gap-3 flex-1">
+        <div className="grid grid-cols-2 gap-3">
           <div onClick={() => setCurrentView("temperature")} className="cursor-pointer">
             <MetricCard
               title="Temperatur"
@@ -128,16 +128,6 @@ export function Dashboard() {
               icon={<Wind className="w-5 h-5" />}
               color="green"
               status={getCO2Status(currentData.co2)}
-            />
-          </div>
-          <div onClick={() => setCurrentView("airquality")} className="cursor-pointer">
-            <MetricCard
-              title="Luftkvalitet"
-              value={currentData.airQuality}
-              unit=""
-              icon={<Activity className="w-5 h-5" />}
-              color="purple"
-              status={getAirQualityStatus(currentData.airQuality)}
             />
           </div>
         </div>

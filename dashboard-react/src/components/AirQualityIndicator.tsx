@@ -61,54 +61,41 @@ export function AirQualityIndicator({
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-base md:text-lg">
-          Air Quality Overview
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
+    <Card className="bg-white">
+      <CardContent className="pt-4 pb-4 px-4">
         <div className="space-y-3">
-          <div className="grid grid-cols-5 text-xs text-gray-600 px-1">
-            <span className="text-left">Excellent</span>
-            <span className="text-center">Good</span>
-            <span className="text-center">OK</span>
-            <span className="text-center">Moderate</span>
-            <span className="text-right">Poor</span>
-          </div>
-          <div className="relative h-6 md:h-8 rounded-full overflow-hidden bg-gradient-to-r from-green-500 via-yellow-500 to-red-500">
-            <div
-              className="absolute top-1/2 -translate-y-1/2 w-3 h-3 md:w-4 md:h-4 bg-white rounded-full border-2 md:border-4 border-gray-900 shadow-lg transition-all duration-500"
-              style={{ left: getQualityPosition(quality) }}
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3">
-          <div
-            className={`p-3 md:p-4 rounded-lg ${getQualityColor(
-              quality
-            )} bg-opacity-10 border-2 ${getQualityColor(
-              quality
-            )} border-opacity-30`}
-          >
-            <div className="text-xs text-gray-600 mb-1">Current Status</div>
-            <div className="text-base md:text-xl font-semibold text-gray-900">
+          <div className="text-sm text-gray-900">
+            Air Quality:{" "}
+            <span
+              className={`${getQualityColor(
+                quality
+              )} bg-opacity-20 px-2 py-0.5 rounded`}
+            >
               {quality}
-            </div>
+            </span>
           </div>
-          <div className="p-3 md:p-4 rounded-lg bg-gray-100 border-2 border-gray-200">
-            <div className="text-xs text-gray-600 mb-1">CO2 Level</div>
-            <div className="text-base md:text-xl font-semibold text-gray-900">
-              {co2.toFixed(0)} ppm
-            </div>
-          </div>
-        </div>
 
-        <div className="p-3 md:p-4 rounded-lg bg-blue-50 border border-blue-200">
-          <p className="text-xs md:text-sm text-gray-700">
-            {getRecommendation(quality)}
-          </p>
+          <div className="space-y-1">
+            <div className="relative h-6 rounded-full overflow-hidden bg-gradient-to-r from-green-500 via-yellow-500 to-red-500">
+              <div
+                className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full border-2 border-gray-900 shadow-lg transition-all duration-500"
+                style={{ left: getQualityPosition(quality) }}
+              />
+            </div>
+            <div className="flex justify-between text-xs text-gray-600">
+              <span>Excellent</span>
+              <span>Poor</span>
+            </div>
+          </div>
+
+          <div
+            className="p-2 rounded-lg border-2"
+            style={{ backgroundColor: "#E9F2E5", borderColor: "#277D32" }}
+          >
+            <p className="text-xs text-gray-700">
+              {getRecommendation(quality)}
+            </p>
+          </div>
         </div>
       </CardContent>
     </Card>
