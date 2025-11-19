@@ -12,11 +12,16 @@ import { formatTimestamp } from "../utils/dataService";
 
 interface HumidityChartProps {
   data: ClimateData[];
+  timeRange?: "24h" | "7d";
 }
 
-export function HumidityChart({ data }: HumidityChartProps) {
-  const chartData = data.map((item) => ({
-    time: formatTimestamp(item.timestamp, true),
+export function HumidityChart({ data, timeRange = "24h" }: HumidityChartProps) {
+  // Sample data for 7d view to avoid overcrowding
+  const sampledData =
+    timeRange === "7d" ? data.filter((_, index) => index % 6 === 0) : data;
+
+  const chartData = sampledData.map((item) => ({
+    time: formatTimestamp(item.timestamp, true, timeRange),
     humidity: item.humidity,
   }));
 

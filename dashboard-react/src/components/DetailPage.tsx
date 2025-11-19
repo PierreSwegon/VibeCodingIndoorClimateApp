@@ -43,7 +43,7 @@ export function DetailPage({
           value: currentData.temperature.toFixed(1),
           unit: "°C",
           color: "from-orange-500 to-red-500",
-          chart: <TemperatureChart data={filteredData} />,
+          chart: <TemperatureChart data={filteredData} timeRange={timeRange} />,
           info: {
             optimal: `${thresholds.temperature.min}-${thresholds.temperature.max}°C`,
             description:
@@ -62,7 +62,7 @@ export function DetailPage({
           value: currentData.humidity.toFixed(0),
           unit: "%",
           color: "from-blue-500 to-cyan-500",
-          chart: <HumidityChart data={filteredData} />,
+          chart: <HumidityChart data={filteredData} timeRange={timeRange} />,
           info: {
             optimal: `${thresholds.humidity.min}-${thresholds.humidity.max}%`,
             description:
@@ -81,7 +81,7 @@ export function DetailPage({
           value: currentData.co2.toFixed(0),
           unit: "ppm",
           color: "from-green-500 to-emerald-500",
-          chart: <CO2Chart data={filteredData} />,
+          chart: <CO2Chart data={filteredData} timeRange={timeRange} />,
           info: {
             optimal: `Below ${thresholds.co2.max} ppm`,
             description:
@@ -100,7 +100,7 @@ export function DetailPage({
           value: currentData.airQuality,
           unit: "",
           color: "from-purple-500 to-pink-500",
-          chart: <CO2Chart data={filteredData} />,
+          chart: <CO2Chart data={filteredData} timeRange={timeRange} />,
           info: {
             optimal: "Excellent - Good",
             description:

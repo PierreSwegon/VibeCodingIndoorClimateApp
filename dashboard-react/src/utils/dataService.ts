@@ -47,10 +47,18 @@ export function getLatestData(data: ClimateData[]): ClimateData | null {
 
 export function formatTimestamp(
   timestamp: string,
-  compact: boolean = false
+  compact: boolean = false,
+  timeRange?: "24h" | "7d"
 ): string {
   const date = new Date(timestamp);
   if (compact) {
+    if (timeRange === "7d") {
+      return date.toLocaleDateString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+      });
+    }
     return `${date.getHours().toString().padStart(2, "0")}:00`;
   }
   return date.toLocaleString("sv-SE", {
