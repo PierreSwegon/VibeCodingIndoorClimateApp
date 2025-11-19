@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using VibeCodingIndoorClimateApp.Models;
 
+namespace VibeCodingIndoorClimateApp.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 public class IndoorClimateController : ControllerBase

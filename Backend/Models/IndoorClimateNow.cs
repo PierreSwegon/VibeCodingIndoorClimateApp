@@ -1,9 +1,4 @@
-public class TimeSeriesValue
-{
-    public DateTime Timestamp { get; set; }
-    public double Value { get; set; }
-}
-
+namespace VibeCodingIndoorClimateApp.Models;
 public class IndoorClimateNow
 {
     public double Temperature { get; set; }
