@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pierre.gelter\\Work Folders\\Documents\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp\\VibeCodingIndoorClimateApp.csproj": {}
+    "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pierre.gelter\\Work Folders\\Documents\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp\\VibeCodingIndoorClimateApp.csproj": {
+    "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pierre.gelter\\Work Folders\\Documents\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp\\VibeCodingIndoorClimateApp.csproj",
+        "projectUniqueName": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
         "projectName": "VibeCodingIndoorClimateApp",
-        "projectPath": "C:\\Users\\pierre.gelter\\Work Folders\\Documents\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp\\VibeCodingIndoorClimateApp.csproj",
-        "packagesPath": "C:\\Users\\pierre.gelter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pierre.gelter\\Work Folders\\Documents\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp\\obj\\",
+        "projectPath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
+        "packagesPath": "C:\\Users\\fabian.leven\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\pierre.gelter\\Work Folders\\Documents\\VibeCodingIndoorClimateApp\\Backend\\NuGet.Config",
-          "C:\\Users\\pierre.gelter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\NuGet.Config",
+          "C:\\Users\\fabian.leven\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,11 +26,9 @@
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\path\\to\\your\\local\\packages": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/SwegonSystemDevelopment/_packaging/SwegonCloudHost/nuget/v3/index.json": {},
-          "https://swegon.bytesafe.dev/nuget/inside-cloud-nuget-v1/index.json": {},
-          "https://swegon.bytesafe.dev/nuget/swegon-core-nuget/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {

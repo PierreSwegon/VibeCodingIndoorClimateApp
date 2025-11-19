@@ -1,0 +1,194 @@
+[
+  {
+    "timestamp": "2025-09-18T07:01:17.281049",
+    "temperature": 21.2,
+    "humidity": 42.3,
+    "co2": 520,
+    "aqi": 38,
+    "occupancy": 12
+  },
+  {
+    "timestamp": "2025-09-18T08:01:17.281049",
+    "temperature": 22.1,
+    "humidity": 45.8,
+    "co2": 645,
+    "aqi": 41,
+    "occupancy": 18
+  },
+  {
+    "timestamp": "2025-09-18T09:01:17.281049",
+    "temperature": 23.5,
+    "humidity": 48.2,
+    "co2": 720,
+    "aqi": 52,
+    "occupancy": 25
+  },
+  {
+    "timestamp": "2025-09-18T10:01:17.281049",
+    "temperature": 24.2,
+    "humidity": 44.5,
+    "co2": 680,
+    "aqi": 48,
+    "occupancy": 22
+  },
+  {
+    "timestamp": "2025-09-18T11:01:17.281049",
+    "temperature": 24.8,
+    "humidity": 43.1,
+    "co2": 590,
+    "aqi": 45,
+    "occupancy": 15
+  },
+  {
+    "timestamp": "2025-09-18T12:01:17.281049",
+    "temperature": 25.1,
+    "humidity": 41.7,
+    "co2": 610,
+    "aqi": 42,
+    "occupancy": 8
+  },
+  {
+    "timestamp": "2025-09-18T13:01:17.281049",
+    "temperature": 25.3,
+    "humidity": 40.2,
+    "co2": 580,
+    "aqi": 39,
+    "occupancy": 5
+  },
+  {
+    "timestamp": "2025-09-18T14:01:17.281049",
+    "temperature": 25.6,
+    "humidity": 39.5,
+    "co2": 550,
+    "aqi": 36,
+    "occupancy": 3
+  },
+  {
+    "timestamp": "2025-09-18T15:01:17.281049",
+    "temperature": 25.4,
+    "humidity": 40.8,
+    "co2": 530,
+    "aqi": 35,
+    "occupancy": 4
+  },
+  {
+    "timestamp": "2025-09-18T16:01:17.281049",
+    "temperature": 24.9,
+    "humidity": 42.3,
+    "co2": 600,
+    "aqi": 40,
+    "occupancy": 10
+  },
+  {
+    "timestamp": "2025-09-18T17:01:17.281049",
+    "temperature": 24.3,
+    "humidity": 44.6,
+    "co2": 710,
+    "aqi": 48,
+    "occupancy": 20
+  },
+  {
+    "timestamp": "2025-09-18T18:01:17.281049",
+    "temperature": 23.8,
+    "humidity": 46.9,
+    "co2": 820,
+    "aqi": 58,
+    "occupancy": 28
+  },
+  {
+    "timestamp": "2025-09-18T19:01:17.281049",
+    "temperature": 23.2,
+    "humidity": 48.5,
+    "co2": 890,
+    "aqi": 62,
+    "occupancy": 32
+  },
+  {
+    "timestamp": "2025-09-18T20:01:17.281049",
+    "temperature": 22.8,
+    "humidity": 49.2,
+    "co2": 920,
+    "aqi": 65,
+    "occupancy": 35
+  },
+  {
+    "timestamp": "2025-09-18T21:01:17.281049",
+    "temperature": 22.4,
+    "humidity": 50.1,
+    "co2": 880,
+    "aqi": 60,
+    "occupancy": 30
+  },
+  {
+    "timestamp": "2025-09-18T22:01:17.281049",
+    "temperature": 22.0,
+    "humidity": 51.3,
+    "co2": 750,
+    "aqi": 52,
+    "occupancy": 18
+  },
+  {
+    "timestamp": "2025-09-18T23:01:17.281049",
+    "temperature": 21.5,
+    "humidity": 52.0,
+    "co2": 620,
+    "aqi": 44,
+    "occupancy": 8
+  },
+  {
+    "timestamp": "2025-09-19T00:01:17.281049",
+    "temperature": 21.0,
+    "humidity": 52.8,
+    "co2": 520,
+    "aqi": 38,
+    "occupancy": 2
+  },
+  {
+    "timestamp": "2025-09-19T01:01:17.281049",
+    "temperature": 20.6,
+    "humidity": 53.5,
+    "co2": 480,
+    "aqi": 35,
+    "occupancy": 0
+  },
+  {
+    "timestamp": "2025-09-19T02:01:17.281049",
+    "temperature": 20.3,
+    "humidity": 54.1,
+    "co2": 460,
+    "aqi": 33,
+    "occupancy": 0
+  },
+  {
+    "timestamp": "2025-09-19T03:01:17.281049",
+    "temperature": 20.1,
+    "humidity": 54.6,
+    "co2": 450,
+    "aqi": 32,
+    "occupancy": 0
+  },
+  {
+    "timestamp": "2025-09-19T04:01:17.281049",
+    "temperature": 19.9,
+    "humidity": 55.0,
+    "co2": 445,
+    "aqi": 31,
+    "occupancy": 0
+  },
+  {
+    "timestamp": "2025-09-19T05:01:17.281049",
+    "temperature": 19.8,
+    "humidity": 55.3,
+    "co2": 440,
+    "aqi": 30,
+    "occupancy": 0
+  },
+  {
+    "timestamp": "2025-09-19T06:01:17.281049",
+    "temperature": 19.9,
+    "humidity": 54.8,
+    "co2": 450,
+    "aqi": 32,
+    "occupancy": 1
+  }
+]
