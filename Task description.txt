@@ -1,0 +1,19 @@
+Indoor Climate Dashboard Prototype
+
+Objective
+Create a simple web-based dashboard that visualizes indoor climate data such as temperature, humidity, CO₂ levels, and air quality index using mock data.
+ 
+Requirements
+Use only Copilot Chat to generate code, structure, and logic.
+Display at least 3 types of climate data.
+Include basic charts (e.g., line, bar, or gauge).
+Use mock data (JSON or generated values).
+Make the UI clean and responsive.
+Constraints
+No external help or documentation—only Copilot Chat.
+Must be completed within 4 hours.
+Use any frontend framework or plain HTML/CSS/JS.
+
+Bonus Features
+Add filtering by time (e.g., last 24h, 7 days).
+Include a simulated alert system for threshold breaches.

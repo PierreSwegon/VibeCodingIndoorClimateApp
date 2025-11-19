@@ -1,0 +1,24 @@
+{
+    "temperature": {
+        "min": 18,
+        "max": 26,
+        "unit": "\u00b0C"
+    },
+    "humidity": {
+        "min": 30,
+        "max": 60,
+        "unit": "%"
+    },
+    "co2": {
+        "max": 1000,
+        "unit": "ppm"
+    },
+    "aqi": {
+        "max": 100,
+        "unit": "index"
+    },
+    "occupancy": {
+        "max": 80,
+        "unit": "people"
+    }
+}
