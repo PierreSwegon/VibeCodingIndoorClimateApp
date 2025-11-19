@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MwAD2C8bOfI=",
+  "dgSpecHash": "UUjjNxO3UW0=",
   "success": false,
   "projectFilePath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
   "expectedPackageFiles": [],
@@ -12,6 +12,24 @@
       "projectPath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
       "filePath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
       "libraryId": "Microsoft.AspNetCore.OpenApi",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "The local source 'C:\\path\\to\\your\\local\\packages' doesn't exist.",
+      "projectPath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
+      "filePath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
+      "libraryId": "Swashbuckle.AspNetCore",
+      "targetGraphs": []
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "The local source 'C:\\path\\to\\your\\local\\packages' doesn't exist.",
+      "projectPath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
+      "filePath": "C:\\Users\\fabian.leven\\Swegon\\Hackathon\\VibeCoding\\VibeCodingIndoorClimateApp\\Backend\\VibeCodingIndoorClimateApp.csproj",
+      "libraryId": "Swashbuckle.AspNetCore.SwaggerGen",
       "targetGraphs": []
     }
   ]
