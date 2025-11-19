@@ -8,10 +8,10 @@ interface RoomSelectionProps {
 export function RoomSelection({ onSelectRoom }: RoomSelectionProps) {
   const rooms = [
     {
-      id: "kitchen",
-      name: "Kitchen",
-      icon: <Utensils className="w-8 h-8" />,
-      color: "from-orange-500 to-red-500",
+      id: "hallway",
+      name: "Hallway",
+      icon: <DoorOpen className="w-8 h-8" />,
+      color: "from-green-500 to-emerald-500",
     },
     {
       id: "living-room",
@@ -20,10 +20,10 @@ export function RoomSelection({ onSelectRoom }: RoomSelectionProps) {
       color: "from-blue-500 to-cyan-500",
     },
     {
-      id: "hallway",
-      name: "Hallway",
-      icon: <DoorOpen className="w-8 h-8" />,
-      color: "from-green-500 to-emerald-500",
+      id: "kitchen",
+      name: "Kitchen",
+      icon: <Utensils className="w-8 h-8" />,
+      color: "from-orange-500 to-red-500",
     },
     {
       id: "bedroom-1",
@@ -43,7 +43,7 @@ export function RoomSelection({ onSelectRoom }: RoomSelectionProps) {
     <div className="min-h-screen p-4" style={{ backgroundColor: "#F5F5F5" }}>
       <div className="max-w-md mx-auto h-screen flex flex-col">
         <div className="text-center py-3">
-          <h1 className="text-indigo-900">Aspgatan 28</h1>
+          <h1 className="text-indigo-900">Swegon Road 42</h1>
           <p className="text-sm text-gray-600">
             Select a room to view climate data
           </p>
@@ -71,7 +71,12 @@ export function RoomSelection({ onSelectRoom }: RoomSelectionProps) {
           <Card
             className="overflow-hidden transition-all hover:shadow-lg active:scale-95 cursor-pointer flex flex-col border-2 border-dashed"
             style={{ borderColor: "#277D32" }}
-            onClick={() => alert("Function to add new room")}
+            onClick={() =>
+              window.open(
+                "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "_blank"
+              )
+            }
           >
             <CardContent className="pt-3 pb-3 px-3 flex flex-col items-center justify-center text-center space-y-2 h-full">
               <div className="p-3 rounded-lg bg-gray-200 text-gray-600">

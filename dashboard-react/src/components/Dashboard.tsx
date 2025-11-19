@@ -147,7 +147,7 @@ export function Dashboard() {
             <ArrowLeft className="w-4 h-4" />
             Rooms
           </Button>
-          <h1 className="text-indigo-900">Aspgatan 28</h1>
+          <h1 className="text-indigo-900">Swegon Road 42</h1>
           <p className="text-sm text-gray-600">{getRoomName(selectedRoom)}</p>
         </div>
 
