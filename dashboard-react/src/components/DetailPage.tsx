@@ -6,8 +6,10 @@ import { HumidityChart } from "./HumidityChart";
 import { CO2Chart } from "./CO2Chart";
 import { ClimateData, Thresholds } from "../types";
 import { filterDataByTime } from "../utils/dataService";
+import { useState } from "react";
 
 type ViewType = "temperature" | "humidity" | "co2" | "airquality";
+type TimeRange = "24h" | "7d";
 
 interface DetailPageProps {
   view: ViewType;
@@ -29,7 +31,8 @@ export function DetailPage({
   thresholds,
   onBack,
 }: DetailPageProps) {
-  const filteredData = filterDataByTime(allData, "24h");
+  const [timeRange, setTimeRange] = useState<TimeRange>("24h");
+  const filteredData = filterDataByTime(allData, timeRange);
 
   const getPageConfig = () => {
     switch (view) {
@@ -115,7 +118,7 @@ export function DetailPage({
   const config = getPageConfig();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen p-4" style={{ backgroundColor: "#F5F5F5" }}>
       <div className="max-w-md mx-auto space-y-4">
         <div className="flex items-center gap-3 pt-4">
           <Button
@@ -133,9 +136,7 @@ export function DetailPage({
           <div className={`h-2 bg-gradient-to-r ${config.color}`} />
           <CardContent className="pt-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold text-gray-900">
-                {config.title}
-              </h2>
+              <h2 className="text-gray-900">{config.title}</h2>
               <div
                 className={`p-3 rounded-lg bg-gradient-to-br ${config.color} text-white`}
               >
@@ -143,11 +144,9 @@ export function DetailPage({
               </div>
             </div>
             <div className="flex items-baseline gap-2">
-              <span className="text-4xl font-bold text-gray-900">
-                {config.value}
-              </span>
+              <span className="text-gray-900">{config.value}</span>
               {config.unit && (
-                <span className="text-xl text-gray-500">{config.unit}</span>
+                <span className="text-gray-500">{config.unit}</span>
               )}
             </div>
           </CardContent>
@@ -155,27 +154,48 @@ export function DetailPage({
 
         <Card>
           <CardHeader>
-            <CardTitle>History (24 hours)</CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle>History</CardTitle>
+              <div className="flex gap-2">
+                <Button
+                  variant={timeRange === "24h" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setTimeRange("24h")}
+                >
+                  24h
+                </Button>
+                <Button
+                  variant={timeRange === "7d" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setTimeRange("7d")}
+                >
+                  7d
+                </Button>
+              </div>
+            </div>
           </CardHeader>
           <CardContent>{config.chart}</CardContent>
         </Card>
 
-        <Card className="bg-blue-50 border-blue-200">
+        <Card
+          className="border-2"
+          style={{ backgroundColor: "#E9F2E5", borderColor: "#277D32" }}
+        >
           <CardContent className="pt-6 space-y-4">
             <div>
-              <h3 className="text-sm font-semibold text-blue-900 mb-1">
+              <h3 className="mb-1" style={{ color: "#277D32" }}>
                 Optimal Value
               </h3>
-              <p className="text-sm text-gray-700">{config.info.optimal}</p>
+              <p className="text-gray-700">{config.info.optimal}</p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-blue-900 mb-1">
+              <h3 className="mb-1" style={{ color: "#277D32" }}>
                 Information
               </h3>
               <p className="text-sm text-gray-700">{config.info.description}</p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-blue-900 mb-2">
+              <h3 className="mb-2" style={{ color: "#277D32" }}>
                 Recommended Actions
               </h3>
               <ul className="space-y-1 text-sm text-gray-700">

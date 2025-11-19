@@ -8,18 +8,37 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export function HumidityChart() {
-  // Generera mock-data för 24 timmar
+type TimeRange = "24h" | "7d";
+
+interface HumidityChartProps {
+  timeRange: TimeRange;
+}
+
+export function HumidityChart({ timeRange }: HumidityChartProps) {
+  // Generera mock-data för 24 timmar eller 7 dagar
   const generateData = () => {
     const data = [];
     const now = new Date();
-    for (let i = 23; i >= 0; i--) {
-      const hour = new Date(now.getTime() - i * 60 * 60 * 1000);
-      const humidity = 45 + Math.sin(i / 4) * 10 + Math.random() * 5;
-      data.push({
-        time: `${hour.getHours().toString().padStart(2, "0")}:00`,
-        humidity: parseFloat(humidity.toFixed(0)),
-      });
+    
+    if (timeRange === "24h") {
+      for (let i = 23; i >= 0; i--) {
+        const hour = new Date(now.getTime() - i * 60 * 60 * 1000);
+        const humidity = 45 + Math.sin(i / 4) * 10 + Math.random() * 5;
+        data.push({
+          time: `${hour.getHours().toString().padStart(2, "0")}:00`,
+          humidity: parseFloat(humidity.toFixed(0)),
+        });
+      }
+    } else {
+      // 7 dagar
+      for (let i = 6; i >= 0; i--) {
+        const day = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
+        const humidity = 48 + Math.sin(i / 2) * 8 + Math.random() * 6;
+        data.push({
+          time: day.toLocaleDateString("sv-SE", { weekday: "short" }),
+          humidity: parseFloat(humidity.toFixed(0)),
+        });
+      }
     }
     return data;
   };
@@ -40,7 +59,7 @@ export function HumidityChart() {
           dataKey="time"
           tick={{ fontSize: 10 }}
           stroke="#6b7280"
-          tickFormatter={(value, index) => (index % 6 === 0 ? value : "")}
+          tickFormatter={timeRange === "24h" ? (value, index) => (index % 6 === 0 ? value : "") : undefined}
         />
         <YAxis
           domain={[0, 100]}

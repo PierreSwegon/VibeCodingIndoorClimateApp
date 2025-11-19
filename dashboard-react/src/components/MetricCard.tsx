@@ -38,21 +38,21 @@ export function MetricCard({
   };
 
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg active:scale-95 h-full flex flex-col">
+    <Card className="overflow-hidden transition-all hover:shadow-lg active:scale-95 flex flex-col aspect-square">
       <div className={`h-1 bg-gradient-to-r ${colorClasses[color]}`} />
       <CardContent className="pt-3 pb-3 px-3 flex-1 flex flex-col justify-between">
-        <div className="flex items-start justify-between mb-2">
+        <div className="flex items-start justify-between mb-1">
           <div className="text-xs text-gray-600">{title}</div>
           <div
-            className={`p-1.5 rounded-lg bg-gradient-to-br ${colorClasses[color]} text-white`}
+            className={`p-1 rounded-lg bg-gradient-to-br ${colorClasses[color]} text-white`}
           >
             {icon}
           </div>
         </div>
         <div className="space-y-1">
           <div className="flex items-baseline gap-1">
-            <span className="text-2xl font-bold text-gray-900">{value}</span>
-            {unit && <span className="text-sm text-gray-500">{unit}</span>}
+            <span className="text-gray-900 text-3xl">{value}</span>
+            {unit && <span className="text-gray-500 text-xl">{unit}</span>}
           </div>
           <div
             className={`inline-block px-1.5 py-0.5 rounded-full text-xs border ${statusColors[status]}`}

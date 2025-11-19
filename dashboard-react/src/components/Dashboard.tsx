@@ -76,7 +76,10 @@ export function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{ backgroundColor: "#F5F5F5" }}
+      >
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading data...</p>
@@ -93,7 +96,10 @@ export function Dashboard() {
 
   if (!currentData || !thresholds) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+      <div
+        className="min-h-screen flex items-center justify-center p-4"
+        style={{ backgroundColor: "#F5F5F5" }}
+      >
         <Card className="max-w-md">
           <CardContent className="pt-6">
             <div className="text-center">
@@ -129,7 +135,7 @@ export function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen p-4" style={{ backgroundColor: "#F5F5F5" }}>
       <div className="max-w-md mx-auto h-screen flex flex-col">
         <div className="text-center py-4 relative">
           <Button
@@ -141,11 +147,11 @@ export function Dashboard() {
             <ArrowLeft className="w-4 h-4" />
             Rooms
           </Button>
-          <h1 className="text-2xl font-bold text-indigo-900">Aspgatan 28</h1>
+          <h1 className="text-indigo-900">Aspgatan 28</h1>
           <p className="text-sm text-gray-600">{getRoomName(selectedRoom)}</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 flex-1">
+        <div className="grid grid-cols-2 gap-3">
           <div
             onClick={() => setCurrentView("temperature")}
             className="cursor-pointer"
@@ -180,19 +186,6 @@ export function Dashboard() {
               icon={<Wind className="w-5 h-5" />}
               color="green"
               status={getCO2Status(currentData.co2, thresholds)}
-            />
-          </div>
-          <div
-            onClick={() => setCurrentView("airquality")}
-            className="cursor-pointer"
-          >
-            <MetricCard
-              title="Air Quality"
-              value={airQuality}
-              unit=""
-              icon={<Activity className="w-5 h-5" />}
-              color="purple"
-              status={getAirQualityStatus(airQuality)}
             />
           </div>
         </div>

@@ -9,24 +9,43 @@ import {
   ReferenceLine,
 } from "recharts";
 
-export function CO2Chart() {
-  // Generera mock-data för 24 timmar
+type TimeRange = "24h" | "7d";
+
+interface CO2ChartProps {
+  timeRange: TimeRange;
+}
+
+export function CO2Chart({ timeRange }: CO2ChartProps) {
+  // Generera mock-data för 24 timmar eller 7 dagar
   const generateData = () => {
     const data = [];
     const now = new Date();
-    for (let i = 23; i >= 0; i--) {
-      const hour = new Date(now.getTime() - i * 60 * 60 * 1000);
-      // Simulera högre CO2 under arbetstid (8-17)
-      const hourOfDay = hour.getHours();
-      let baseCO2 = 450;
-      if (hourOfDay >= 8 && hourOfDay <= 17) {
-        baseCO2 = 650 + Math.sin((hourOfDay - 8) / 2) * 200;
+    
+    if (timeRange === "24h") {
+      for (let i = 23; i >= 0; i--) {
+        const hour = new Date(now.getTime() - i * 60 * 60 * 1000);
+        // Simulera högre CO2 under arbetstid (8-17)
+        const hourOfDay = hour.getHours();
+        let baseCO2 = 450;
+        if (hourOfDay >= 8 && hourOfDay <= 17) {
+          baseCO2 = 650 + Math.sin((hourOfDay - 8) / 2) * 200;
+        }
+        const co2 = baseCO2 + Math.random() * 100;
+        data.push({
+          time: `${hour.getHours().toString().padStart(2, "0")}:00`,
+          co2: parseFloat(co2.toFixed(0)),
+        });
       }
-      const co2 = baseCO2 + Math.random() * 100;
-      data.push({
-        time: `${hour.getHours().toString().padStart(2, "0")}:00`,
-        co2: parseFloat(co2.toFixed(0)),
-      });
+    } else {
+      // 7 dagar
+      for (let i = 6; i >= 0; i--) {
+        const day = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
+        const co2 = 550 + Math.sin(i / 2) * 150 + Math.random() * 200;
+        data.push({
+          time: day.toLocaleDateString("sv-SE", { weekday: "short" }),
+          co2: parseFloat(co2.toFixed(0)),
+        });
+      }
     }
     return data;
   };
@@ -41,7 +60,7 @@ export function CO2Chart() {
           dataKey="time"
           tick={{ fontSize: 10 }}
           stroke="#6b7280"
-          tickFormatter={(value, index) => (index % 6 === 0 ? value : "")}
+          tickFormatter={timeRange === "24h" ? (value, index) => (index % 6 === 0 ? value : "") : undefined}
         />
         <YAxis
           domain={[0, 1400]}

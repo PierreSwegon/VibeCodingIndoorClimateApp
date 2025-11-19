@@ -4,8 +4,10 @@ import { ArrowLeft, Thermometer, Droplets, Wind, Activity } from "lucide-react";
 import { TemperatureChart } from "./TemperatureChart";
 import { HumidityChart } from "./HumidityChart";
 import { CO2Chart } from "./CO2Chart";
+import { useState } from "react";
 
 type ViewType = "temperature" | "humidity" | "co2" | "airquality";
+type TimeRange = "24h" | "7d";
 
 interface DetailPageProps {
   view: ViewType;
@@ -19,6 +21,8 @@ interface DetailPageProps {
 }
 
 export function DetailPage({ view, currentData, onBack }: DetailPageProps) {
+  const [timeRange, setTimeRange] = useState<TimeRange>("24h");
+
   const getPageConfig = () => {
     switch (view) {
       case "temperature":
@@ -28,7 +32,7 @@ export function DetailPage({ view, currentData, onBack }: DetailPageProps) {
           value: currentData.temperature.toFixed(1),
           unit: "°C",
           color: "from-orange-500 to-red-500",
-          chart: <TemperatureChart />,
+          chart: <TemperatureChart timeRange={timeRange} />,
           info: {
             optimal: "20-23°C",
             description: "Idealtemperaturen för inomhusmiljö ligger mellan 20-23°C. Temperaturer utanför detta intervall kan påverka komfort och produktivitet.",
@@ -46,7 +50,7 @@ export function DetailPage({ view, currentData, onBack }: DetailPageProps) {
           value: currentData.humidity.toFixed(0),
           unit: "%",
           color: "from-blue-500 to-cyan-500",
-          chart: <HumidityChart />,
+          chart: <HumidityChart timeRange={timeRange} />,
           info: {
             optimal: "40-60%",
             description: "Optimal luftfuktighet ligger mellan 40-60%. För låg fuktighet kan orsaka torra slemhinnor, medan för hög fuktighet kan leda till mögelproblem.",
@@ -64,7 +68,7 @@ export function DetailPage({ view, currentData, onBack }: DetailPageProps) {
           value: currentData.co2.toFixed(0),
           unit: "ppm",
           color: "from-green-500 to-emerald-500",
-          chart: <CO2Chart />,
+          chart: <CO2Chart timeRange={timeRange} />,
           info: {
             optimal: "Under 800 ppm",
             description: "CO2-nivåer under 800 ppm anses vara bra. Högre nivåer kan orsaka trötthet, huvudvärk och minskad koncentration.",
@@ -82,7 +86,7 @@ export function DetailPage({ view, currentData, onBack }: DetailPageProps) {
           value: currentData.airQuality,
           unit: "",
           color: "from-purple-500 to-pink-500",
-          chart: <CO2Chart />,
+          chart: <CO2Chart timeRange={timeRange} />,
           info: {
             optimal: "Utmärkt - Bra",
             description: "Luftkvaliteten baseras främst på CO2-nivåer och andra faktorer. God luftkvalitet är viktig för hälsa och välbefinnande.",
@@ -99,7 +103,7 @@ export function DetailPage({ view, currentData, onBack }: DetailPageProps) {
   const config = getPageConfig();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen p-4" style={{ backgroundColor: '#F5F5F5' }}>
       <div className="max-w-md mx-auto space-y-4">
         {/* Header with back button */}
         <div className="flex items-center gap-3 pt-4">
@@ -134,7 +138,25 @@ export function DetailPage({ view, currentData, onBack }: DetailPageProps) {
         {/* Chart */}
         <Card>
           <CardHeader>
-            <CardTitle>Historik (24 timmar)</CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle>Historik</CardTitle>
+              <div className="flex gap-2">
+                <Button
+                  variant={timeRange === "24h" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setTimeRange("24h")}
+                >
+                  24h
+                </Button>
+                <Button
+                  variant={timeRange === "7d" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setTimeRange("7d")}
+                >
+                  7d
+                </Button>
+              </div>
+            </div>
           </CardHeader>
           <CardContent>
             {config.chart}
@@ -142,18 +164,18 @@ export function DetailPage({ view, currentData, onBack }: DetailPageProps) {
         </Card>
 
         {/* Information */}
-        <Card className="bg-blue-50 border-blue-200">
+        <Card className="border-2" style={{ backgroundColor: '#E9F2E5', borderColor: '#277D32' }}>
           <CardContent className="pt-6 space-y-4">
             <div>
-              <h3 className="text-blue-900 mb-1">Optimalt värde</h3>
+              <h3 className="mb-1" style={{ color: '#277D32' }}>Optimalt värde</h3>
               <p className="text-gray-700">{config.info.optimal}</p>
             </div>
             <div>
-              <h3 className="text-blue-900 mb-1">Information</h3>
+              <h3 className="mb-1" style={{ color: '#277D32' }}>Information</h3>
               <p className="text-sm text-gray-700">{config.info.description}</p>
             </div>
             <div>
-              <h3 className="text-blue-900 mb-2">Rekommenderade åtgärder</h3>
+              <h3 className="mb-2" style={{ color: '#277D32' }}>Rekommenderade åtgärder</h3>
               <ul className="space-y-1 text-sm text-gray-700">
                 {config.info.tips.map((tip, index) => (
                   <li key={index}>• {tip}</li>
